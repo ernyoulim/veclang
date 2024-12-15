@@ -1,0 +1,76 @@
+global duplicated = 0;
+
+function_call isDuplicate(arr,start,end){
+      loop_(start != end){
+           if_(arr[start] == arr[end]){
+               duplicated = 1;
+	       return; 
+           }else{
+		start = start + 1;
+           };
+
+      };
+};
+
+function_call generatePerm(arr,start,end){
+	if_(start == end){
+		num i = 0;
+		loop_(i != end + 1){
+			print arr[i];	
+			i = i + 1;
+		};
+		print "XXXXXXXXXX";
+		return;
+		
+	}else{
+		num iter = start;
+		num temp = 0; 
+		loop_(iter != end + 1){
+			isDuplicate(arr,start,iter);
+			if_(!duplicated){
+				temp = arr[start];
+                        	arr[start] = arr[iter];
+                        	arr[iter] = temp;
+
+                        	temp = start + 1;
+
+                        	generatePerm(arr,temp,end);
+
+                        	temp = arr[start];
+                        	arr[start] = arr[iter];
+                        	arr[iter] = temp;
+				duplicated = 0;
+	                        iter = iter + 1;
+
+			}else{
+				duplicated = 0;
+				iter = iter + 1;
+			};
+		};
+	
+	};
+};
+
+print "Enter the number of elements: ";
+num n  = getint;
+
+print n;
+
+num b = n; 
+
+[num] x = [];
+
+
+loop_(b!=0){
+	print "Enter Number : ";
+	num k = getint; 
+	x.add_(k);
+	b = b - 1;
+};
+
+num val = 0;
+b = n - 1;
+
+generatePerm(x,val,b);
+
+print "Done";

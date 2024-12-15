@@ -1,0 +1,39 @@
+point x = (0,0,0);
+point y = (4,0,0);
+point z = (4,2,0);
+point a = (0,2,0);
+
+shape b = x->y->z->a;
+
+print b;
+
+print "After Translation";
+
+point translate = (2,2,0);
+
+num iter = 0;
+
+loop_(iter!=4){                                                /C Translation Operation C/
+	b.getPoints<iter> = b.getPoints<iter> + translate; 
+	iter = iter + 1;
+};
+
+print b;
+								/C Rotating Operation C/
+mat3x3 rotate = [0.0 , -1.0, 0.0 ],        		 
+	 	[1.0 , 0.0 , 0.0 ],
+	 	[0.0 , 0.0 , 1.0];;
+
+shape b = b * rotate;
+print "After rotate";
+print b;
+								/C Scaling Operation C/
+mat3x3 scale = 	[2.0 , 0.0 , 0.0 ],
+	 	[0.0 , 2.0 , 0.0 ],
+		[0.0 , 0,0 , 0.0 ];;
+
+point moveBack = (2,-2,0);
+
+shape afterScale = b * scale -  moveBack;
+print "After Scaling";
+print afterScale;

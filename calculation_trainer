@@ -1,0 +1,30 @@
+loop_(1) {
+num a = getrand_(1,10);
+print a;
+num b = getrand_(1,10);
+print b;
+num c = getrand_(0,3);
+
+switch_(c){
+	case 0:
+		print "+"; num result = a + b;
+	case 1: 
+		print "-"; num result = a - b;
+	case 2: 
+		print "/"; num result = a / b;
+	case 3:
+		print "*"; num result = a * b;
+};
+
+print "What will be the answer";
+
+num ans = getint;
+
+if_(ans == result){
+	print "You are right";
+}else{
+	print "You are wrong"; print "The result should be"; print result;
+	print "Next Question : ";
+};
+
+};

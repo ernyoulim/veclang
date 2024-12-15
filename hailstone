@@ -1,0 +1,18 @@
+print "Enter a number: ";
+num n = getint;
+
+num steps = 0;
+
+loop_(n!=1){
+	if_(n % 2 == 0) {
+            n = n / 2;
+        } else {
+            n = n * 3 + 1;
+        };
+	print "Current Number is: ";
+        print n;
+        steps = steps + 1;
+};
+
+print "Number of steps : ";
+print steps;

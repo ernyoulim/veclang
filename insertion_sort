@@ -1,0 +1,37 @@
+[num] arr =  [12, 11, 13, 5, 6];
+
+num size = 5;
+
+num i = 1;
+num key = 0;
+num j = 0;
+
+print "Before sorting: ";
+
+print arr[0];
+print arr[1];
+print arr[2];
+print arr[3];
+print arr[4];
+
+loop_(i < size ){
+	num key = arr[i];
+	j = i - 1;
+		
+	loop_(j != -1 & arr[j] > key){
+		num tempOne = j + 1;
+		arr[tempOne] = arr[j];		
+		j = j - 1;
+	};
+	num tempOne = j + 1;
+	arr[tempOne] = key;
+	i = i + 1;	
+};
+
+print "After sorting ";
+
+print arr[0];
+print arr[1];
+print arr[2];
+print arr[3];
+print arr[4];

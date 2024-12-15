@@ -1,0 +1,15 @@
+point x = (1,1,1);
+point y = (1,2,1);
+
+point x = (1,1,1);
+point y = (1,2,1);
+
+shape s = x->y;
+
+s  = s.getPoints<0>->s.getPoints<1>->(9,9,9);
+
+print s;shape s = x->y;
+
+s  = s.getPoints<0>->s.getPoints<1>->(9,9,9);
+
+print s;
